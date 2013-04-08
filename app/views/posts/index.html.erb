@@ -1,0 +1,21 @@
+<% if @admin %>
+	<div style="float: right">
+  	<%= link_to "Новая запись", :action => "new" %>
+	</div>
+<% end -%>
+<h2>Статьи на тему о шитье</h2>
+<% @posts.each do |post| %>
+	<div style="padding: 20px; border-bottom: 2px solid #e0e0e0;">
+		<p>
+			<strong><%= post.title %></strong>
+			<sup>created at <%= post.created_at %></sup> 
+		</p>
+		<div style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
+			<%= post.body %>
+		</div>
+		<div>
+      <%= link_to "Подробнее", :action => "show", :id => post.id %>
+		</div>
+	</div>
+<% end -%>
+

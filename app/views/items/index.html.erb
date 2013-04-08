@@ -1,0 +1,47 @@
+
+<!-- <table>
+	<tr>
+		<th>Наименование</th>
+		<th>Описание товара</th>
+		<th>Цена</th>
+	</tr>
+	<% @items.each do |t| %>
+	<tr>
+		<td><%= link_to t.title, item_path(t) %></td>
+		<td><%= t.body %></td>
+		<td style="float: right"><%= t.price %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<td></td>
+		<td style = "text-align: right">
+		<%= link_to "Добавить товар", new_item_path %>
+		</td>
+		<td></td>
+	</tr>
+</table> -->
+<div class="item">
+  <div class="i_item_title">
+    <strong>Наименование</strong>
+  </div>
+  <div class="i_item_body">
+    <strong>Описание товара</strong>
+  </div>  
+  <div class="i_item_price">
+    <strong>Цена, руб.</strong>
+  </div>
+</div>
+<% @items.each do |t| %>
+	<div class="item">	
+  	<div class="i_item_title">
+    	<%= link_to t.title, item_path(t) %>
+  	</div>
+  	<div class="i_item_body">
+    	<%= t.body %>
+  	</div>  
+  	<div class="i_item_price" align="right">
+    	<%= t.price %>
+  	</div>
+	</div>
+<% end %>	
+<div align="right"><%= link_to "Добавить товар", new_item_path %></div>

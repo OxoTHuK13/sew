@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sew</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="maindiv">
+		<div class="headerdiv">
+			<%= link_to image_tag("sofa.jpg", :style => "border: 0px"), root_path %>
+			<div class="hdc">
+				<%= link_to "Регистрация", signup_path %>
+			</div>
+			<div class="hdc">
+				<%= link_to "Контакты", contacts_path %>
+			</div>
+			<div class="hdc">
+				<%= link_to "Статьи", posts_path %>
+			</div>
+			<div class="hdc">
+				<%= link_to "Каталог", items_path %>
+			</div>
+			<div class="hdc">
+				<%= link_to "На главную", root_path %>
+			</div>
+		</div>
+		<div class="content">
+		  <%= yield %>
+		</div>
+		<div class="footerdiv">
+			<div class="fdc">
+				<%= link_to "Контакты", contacts_path %>
+			</div>
+		</div>
+  </div>
+</body>
+</html>

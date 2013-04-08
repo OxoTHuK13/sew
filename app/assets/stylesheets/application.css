@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body{
+  background-color: white; /* Цвет фона веб-страницы */
+  color: #555;
+}
+a{
+	text-decoration: none;
+	color: blue;
+}
+table{
+	width: 600px;
+	float: right;
+}
+td{
+	border-top: 1px solid #e0e0e0;
+	margin: 0;
+	padding: 5px;
+}
+div.item{
+	border-bottom: 1px solid #e0e0e0;
+	height: auto;
+	padding: 0;
+	padding-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+}
+div.item div{
+	float: left;
+	margin-right: 10px;
+	max-height: 54px;
+	margin-bottom: 0;
+}
+div.i_item_title{
+	width: 150px;
+}
+div.i_item_body{
+	width: 500px;
+}
+div.i_item_price{
+	width: 74px;
+	margin: 0;
+	float: right;
+}
+
+input:not([type="submit"]), textarea{
+	width: 760px;
+}
+#item_price{
+	width: 90px;
+}
+
+.maindiv{
+	background-color: #f9f9f9;
+	width: 800px;
+	margin: 0;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #e0e0e0;
+	height: auto;
+	min-height: 800px;
+	max-height: 20000px;
+	position: relative;
+}
+.headerdiv, .footerdiv{
+	padding: 0;
+	background-color: #eee;
+	height: 60px;
+	width: inherit;
+	z-index: 100;
+}
+.hdc, .fdc{
+	padding: 3px;
+	margin: 10px;
+	float: right;
+}
+.content{
+	position: relative;
+	top: 10px;
+	margin: 20px;
+	margin-bottom: 50px;
+}
+.footerdiv{
+	height: 30px;
+	bottom: 0;
+	position: absolute;
+}
+.fdc{
+	margin: 5px;
+	font: italic 80% serif;
+}
