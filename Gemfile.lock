@@ -93,6 +93,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7-x86-mingw32)
+    string_master (0.3.6)
+      actionpack
     thor (0.18.1)
     tilt (1.3.6)
     treetop (1.4.12)
@@ -114,4 +116,5 @@ DEPENDENCIES
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3
+  string_master
   uglifier (>= 1.0.3)

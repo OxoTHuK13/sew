@@ -11,7 +11,7 @@
 		<div class="headerdiv">
 			<%= link_to image_tag("sofa.jpg", :style => "border: 0px"), root_path %>
 			<div class="hdc">
-				<%= link_to "Регистрация", signup_path %>
+			
 			</div>
 			<div class="hdc">
 				<%= link_to "Контакты", contacts_path %>
@@ -34,6 +34,25 @@
 				<%= link_to "Контакты", contacts_path %>
 			</div>
 		</div>
-  </div>
+  </div>	
+
+  <% unless signed_in? %>
+  	<%= link_to "Войти", signin_path %> или <br/> 
+		<%= link_to "Зарегистрироваться", signup_path %>
+	<% else %>
+		<p>Добро пожаловать, <br/> <strong><%= link_to current_user.email, current_user %></strong></p>
+		<%= link_to "Выйти", signout_path, method: "delete" %>
+	<% end %><br/><br/>
+
+<!--   <%= debug(params) if Rails.env.development? %>
+  <%= signed_in? %><br/>
+  <% if signed_in? %>
+  <%= current_user.name %>
+  <% else %>
+  Not signed
+  <% end -%>
+<br/>
+  <%= :remember_token %>
+ -->
 </body>
 </html>

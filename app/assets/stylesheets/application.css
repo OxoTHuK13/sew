@@ -19,15 +19,6 @@ a{
 	text-decoration: none;
 	color: blue;
 }
-table{
-	width: 600px;
-	float: right;
-}
-td{
-	border-top: 1px solid #e0e0e0;
-	margin: 0;
-	padding: 5px;
-}
 div.item{
 	border-bottom: 1px solid #e0e0e0;
 	height: auto;
@@ -55,7 +46,7 @@ div.i_item_price{
 }
 
 input:not([type="submit"]), textarea{
-	width: 760px;
+	width: 100%;
 }
 #item_price{
 	width: 90px;
@@ -63,22 +54,22 @@ input:not([type="submit"]), textarea{
 
 .maindiv{
 	background-color: #f9f9f9;
-	width: 800px;
+	width: 50%;
 	margin: 0;
 	padding: 0;
-	margin-left: auto;
+	margin-left: 25%;
 	margin-right: auto;
 	border: 1px solid #e0e0e0;
 	height: auto;
 	min-height: 800px;
-	max-height: 20000px;
 	position: relative;
+	float: left;
 }
 .headerdiv, .footerdiv{
 	padding: 0;
 	background-color: #eee;
 	height: 60px;
-	width: inherit;
+	width: 100%;
 	z-index: 100;
 }
 .hdc, .fdc{

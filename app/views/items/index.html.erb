@@ -37,7 +37,7 @@
     	<%= link_to t.title, item_path(t) %>
   	</div>
   	<div class="i_item_body">
-    	<%= t.body %>
+    	<%= t.body.prep.newlines_to_br.html_escape %>
   	</div>  
   	<div class="i_item_price" align="right">
     	<%= t.price %>

@@ -11,7 +11,7 @@
 			<sup>created at <%= post.created_at %></sup> 
 		</p>
 		<div style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
-			<%= post.body %>
+			<%= post.body.prep.newlines_to_br.html_escape %>
 		</div>
 		<div>
       <%= link_to "Подробнее", :action => "show", :id => post.id %>

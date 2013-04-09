@@ -1,6 +1,9 @@
 Sew::Application.routes.draw do
-  get "users/new"
-
+  #get "users/new"
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :items
+  resources :posts
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -8,7 +11,9 @@ Sew::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   match 'contacts' => 'welcome#contacts'
-  match '/signup', to: 'users#new'
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -16,8 +21,6 @@ Sew::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :items
-  resources :posts
   # Sample resource route with options:
   #   resources :products do
   #     member do
