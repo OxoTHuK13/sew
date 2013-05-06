@@ -23,11 +23,11 @@ end
 
 group :development do
 	gem 'annotate'
-	gem 'pg'
+	
 end
-
+gem 'pg'
 gem 'jquery-rails'
-
+gem 'activerecord-postgresql-adapter'
 gem "string_master"
 gem "faker"
 gem 'will_paginate'
