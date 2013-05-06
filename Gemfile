@@ -23,6 +23,7 @@ end
 
 group :development do
 	gem 'annotate'
+	gem 'pg'
 end
 
 gem 'jquery-rails'
