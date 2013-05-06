@@ -1,0 +1,27 @@
+<div>
+  <div style="width: 30%">
+    <%= form_for(@user) do |f| %>
+
+    	<%= render "shared/error_messages" %>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </p>
+      <p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </p>
+      <p>
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+      </p>
+      <p>
+        <%= f.submit "Готово", :disable_with => 'Отправка...' %>
+      </p>
+    <% end %>
+  </div>
+</div>

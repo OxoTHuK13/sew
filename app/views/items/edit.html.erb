@@ -1,6 +1,2 @@
-<%= form_for @item do |f| -%>
-  Наименование: <br/> <%= f.text_field :title %><br/>
-  Описание: <br/> <%= f.text_area :body %><br/>
-  Цена: <br/> <%= f.text_field :price %>
-  <p><%= f.submit "Готово", :disable_with => 'Submiting...' %></p>
-<% end -%>
+<h2>Обновление товара</h2>
+<%= render "form", done: "Обновить товар" %>

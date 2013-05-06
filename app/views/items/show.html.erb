@@ -1,7 +1,11 @@
 <p>Наименование: <%= @item.title %></p>
 <p>Описание: <%= @item.body.prep.newlines_to_br.html_escape %></p>
 <p>Цена: <%= @item.price %></p>
-<p><%= link_to "Вернуться", :action => "index" %> 
-	<%= link_to "Редактировать", :action => "edit" %> 
-	<%= link_to "Удалить", {:action => :destroy, :id => @item}, :method => "delete", :confirm => 'Are you sure?' %>
+<%= image_tag @item.avatar.url %>
+<p>
+	<%= link_to "Вернуться", :action => "index" %> 
+	<% if signed_in? && current_user.admin? %>
+		<%= link_to "Редактировать", :action => "edit" %> 
+		<%= link_to "Удалить", {:action => :destroy, :id => @item}, :method => "delete", :confirm => 'Are you sure?' %>
+	<% end -%>
 </p>

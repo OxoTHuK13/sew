@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-	before_filter :check_if_admin
+	# before_filter :check_if_admin
+	before_filter :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@posts = Post.all
@@ -37,9 +38,9 @@ class PostsController < ApplicationController
 		redirect_to action: :index
 	end
 
-	private
+	# private
 
-		def check_if_admin
-			@admin = 1 if params[:admin] =="ali"
-		end
+	# 	def check_if_admin
+	# 		@admin = 1 if params[:admin] =="ali"
+	# 	end
 end

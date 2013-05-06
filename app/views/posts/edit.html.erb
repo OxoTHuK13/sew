@@ -1,5 +1,2 @@
-<%= form_for @post do |f| -%>
-  Заголовок: <br/> <%= f.text_field :title %><br/>
-  Статья: <br/> <%= f.text_area :body, :wrap => "soft" %><br/>
-  <%= f.submit "Обновить", :disable_with => 'Submiting...' %>
-<% end -%>
+<h2>Редактирование записи №<%= @post.id %></h2>
+<%= render "form", done: "Обновить запись" %>

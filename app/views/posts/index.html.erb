@@ -1,4 +1,4 @@
-<% if @admin %>
+<% if signed_in? && current_user.admin? %>
 	<div style="float: right">
   	<%= link_to "Новая запись", :action => "new" %>
 	</div>
@@ -11,11 +11,12 @@
 			<sup>created at <%= post.created_at %></sup> 
 		</p>
 		<div style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
-			<%= post.body.prep.newlines_to_br.html_escape %>
+			<%= post.body.prep.urls_to_images.urls_to_links.newlines_to_br %>
 		</div>
 		<div>
       <%= link_to "Подробнее", :action => "show", :id => post.id %>
 		</div>
 	</div>
+				
 <% end -%>
 

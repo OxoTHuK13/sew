@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+	before_filter :admin_user, only: [:new, :create, :edit, :update, :destroy]
+
 	def index
 		unless params[:price]
 			params[:price] = 0 
@@ -17,6 +19,8 @@ class ItemsController < ApplicationController
 		@item = Item.new(params[:item])
 		if @item.save
 			redirect_to action: :show, id: @item.id
+		else
+			render "new"
 		end
 	end
 

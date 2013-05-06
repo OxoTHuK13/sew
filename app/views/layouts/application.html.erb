@@ -9,10 +9,7 @@
 <body>
 	<div class="maindiv">
 		<div class="headerdiv">
-			<%= link_to image_tag("sofa.jpg", :style => "border: 0px"), root_path %>
-			<div class="hdc">
-			
-			</div>
+			<%= link_to image_tag("sofa.png", :style => "border: 0px;"), root_path %>
 			<div class="hdc">
 				<%= link_to "Контакты", contacts_path %>
 			</div>
@@ -36,23 +33,34 @@
 		</div>
   </div>	
 
+  <!-- <div class="rpanel"> -->
   <% unless signed_in? %>
-  	<%= link_to "Войти", signin_path %> или <br/> 
-		<%= link_to "Зарегистрироваться", signup_path %>
+  	<p>
+  		<%= link_to "Войти", signin_path %> или <br/> 
+			<%= link_to "Зарегистрироваться", signup_path %>
+		</p>
 	<% else %>
-		<p>Добро пожаловать, <br/> <strong><%= link_to current_user.email, current_user %></strong></p>
-		<%= link_to "Выйти", signout_path, method: "delete" %>
-	<% end %><br/><br/>
+<!-- 		<p>
+			Добро пожаловать, <br/> <strong><%= link_to current_user.email, current_user %></strong><br/>
+			<%= link_to "Выйти", signout_path, method: "delete", data:{confirm: "You sure?"} %>
+			<%= link_to "Пользователи", users_path %>
+		</p> -->
 
-<!--   <%= debug(params) if Rails.env.development? %>
-  <%= signed_in? %><br/>
-  <% if signed_in? %>
-  <%= current_user.name %>
-  <% else %>
-  Not signed
-  <% end -%>
-<br/>
-  <%= :remember_token %>
+		<!-- Start PureCSSMenu.com MENU -->
+<ul class="pureCssMenu pureCssMenum">
+	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Welcome</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="#">Profile</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="#">Users</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="#">Exit</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+</ul>
+<!-- <a id="pcm" href="http://www.purecssmenu.com/">CSS Drop Down Menu by PureCSSMenu.com</a>
+ --><!-- End PureCSSMenu.com MENU -->
+
+	<% end %>
+<!-- </div>
  -->
 </body>
 </html>

@@ -1,6 +1,2 @@
-<%= form_for @item do |f| -%>
-  Наименование: <br/> <%= f.text_field :title %><br/>
-  Описание: <br/> <%= f.text_area :body, :wrap => "soft" %><br/>
-  Цена: <br/> <%= f.text_field :price %><br/>
-  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
-<% end -%>
+<h2>Добавление товара</h2>
+<%= render "form", done: "Добавить товар" %>

@@ -1,10 +1,17 @@
 <div style="margin-bottom: 50px;">
 Post #<%= @post.id %>
 <p><strong><%= @post.title %></strong></p>
-<%= @post.body.prep.newlines_to_br.html_escape %>
+<%= @post.body.prep.urls_to_images.urls_to_links.newlines_to_br %>
 <p>
   <%= link_to "Назад", :action => "index" %>
+  <% if signed_in? && current_user.admin? %>
   <%= link_to "Редактировать", :action => "edit" %>
   <%= link_to "Удалить", {:action => "destroy", :id => @post.id}, :method => "delete", :confirm => "Are you sure?" %>
+  <% end -%>
 </p>
 </div>
+<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8">
+</script>
+<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="button" 
+data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,
+moimir,lj,friendfeed,moikrug,gplus"></div> 

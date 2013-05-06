@@ -21,6 +21,9 @@
 	</tr>
 </table> -->
 <div class="item">
+	<div class="i_item_avatar">
+    <strong>Фото</strong>
+  </div>
   <div class="i_item_title">
     <strong>Наименование</strong>
   </div>
@@ -33,6 +36,9 @@
 </div>
 <% @items.each do |t| %>
 	<div class="item">	
+		<div class="i_item_avatar">
+			<%= image_tag t.avatar.url(:thumb) %>
+		</div>
   	<div class="i_item_title">
     	<%= link_to t.title, item_path(t) %>
   	</div>
@@ -44,4 +50,8 @@
   	</div>
 	</div>
 <% end %>	
-<div align="right"><%= link_to "Добавить товар", new_item_path %></div>
+<% if signed_in? && current_user.admin? %> 
+	<div align="right">
+		<%= link_to "Добавить товар", new_item_path %>
+	</div>
+<% end -%>

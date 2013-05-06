@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	function add_tag(argument) {
+		var elem = document.getElementById('post_body')
+		elem.value = elem.value + argument
+	}
+</script>
+<%= form_for @post do |f| -%>
+	<p>
+  	<strong>Заголовок:</strong><br/>
+  	<%= f.text_field :title %>
+  </p>
+  <div id='lb'>
+  	<strong>Статья:</strong>
+  </div>
+ 	<div id='textarea_tags'>
+		<a href='#' title='Полужирный' onclick="add_tag('<b></b>')"><b>b</b></a>
+		<a href='#' title='Курисив' onclick="add_tag('<i></i>')"><i>i</i></a>
+		<a href='#' title='Перенос строки' onclick="add_tag('<br/>')">br</a>
+		<a href='#' title='Заголовок' onclick="add_tag('<h1></h1>')">h1</a>
+	</div>
+	<%= f.text_area :body, :wrap => "soft" %>
+  <p>
+  	<%= f.submit done, :disable_with => 'Submiting...' %>
+	</p>
+<% end -%>
